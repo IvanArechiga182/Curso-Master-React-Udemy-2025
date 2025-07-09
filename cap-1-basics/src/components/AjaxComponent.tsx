@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import "../styles/AjaxComponent.css";
 type User = {
   id: number;
   email: string;
@@ -9,11 +9,16 @@ type User = {
 };
 
 function AjaxComponent() {
-  const API_URL = "https://reqres.in/api/users?page=2";
+  const API_URL = "https://reqres.in/api/users?page=";
+  const headers = {
+    "x-api-key": "reqres-free-v1",
+  };
   const [users, setUsers] = useState<User[]>([]);
   const [staticUsers, setStaticUsers] = useState<User[]>([]);
   const [error, setError] = useState<string | null>(null);
-
+  const [page, setPage] = useState<number>(1);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [loadingText, setLoadingText] = useState<string>("Cargando...");
   const getStaticUsers = () => {
     setStaticUsers([
       {
@@ -44,15 +49,40 @@ function AjaxComponent() {
     getStaticUsers();
   }, []);
 
-  const handleGetUsuarios = async () => {
+  const handleGetUsuarios = async (direction?: "next" | "prev") => {
     try {
-      const response = await fetch(API_URL);
+      const newPage =
+        direction === "next"
+          ? page + 1
+          : direction === "prev"
+          ? page - 1
+          : page;
+
+      const validatedPage = newPage < 1 ? 1 : newPage;
+
+      setLoading(true);
+      setLoadingText("Cargando...");
+      const response = await fetch(`${API_URL}${validatedPage}`, {
+        method: "GET",
+        headers: headers,
+      });
+
       if (!response.ok) {
         throw new Error("Error al obtener los usuarios");
       }
-      const data = await response.json();
-      setUsers(data.data);
-      setError(null);
+
+      const { data } = await response.json();
+
+      if (data.length === 0) {
+        throw new Error("No hay más usuarios para mostrar");
+      }
+      setTimeout(() => {
+        setLoading(false);
+        setLoadingText("");
+        setUsers(data);
+        setPage(validatedPage); // Ahora sí actualizas el estado
+        setError(null);
+      }, 2000); // Simula un retraso de 2 segundos
     } catch (err) {
       if (err instanceof Error) {
         setError(err.message);
@@ -97,9 +127,19 @@ function AjaxComponent() {
         ))}
       </ul>
       <h2>Listado de usuarios con AJAX y Fetch: </h2>
-      <button onClick={handleGetUsuarios}>Obtener data</button>
-      {error === null ? (
-        <ul>
+      <button onClick={() => handleGetUsuarios()} disabled={loading}>
+        Obtener data
+      </button>
+      <button onClick={() => handleGetUsuarios("prev")} disabled={loading}>
+        {"<="}
+      </button>
+      <button onClick={() => handleGetUsuarios("next")} disabled={loading}>
+        {"=>"}
+      </button>
+      <h3>Pagina {page}</h3>
+      {loading && <h1>{loadingText}</h1>}
+      {!loading && error === null && (
+        <ul className="users-list">
           {users.map((user) => (
             <li key={user.id}>
               <img
@@ -112,9 +152,9 @@ function AjaxComponent() {
             </li>
           ))}
         </ul>
-      ) : (
-        <h1>{error}</h1>
       )}
+
+      {!loading && error !== null && <h1>{error}</h1>}
     </div>
   );
 }
