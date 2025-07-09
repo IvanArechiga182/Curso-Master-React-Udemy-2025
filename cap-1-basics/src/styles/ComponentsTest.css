@@ -1,0 +1,11 @@
+.form-container form {
+  display: flex;
+  gap: 4px;
+  flex-direction: column;
+  width: 40%;
+}
+
+.form-container form input[type="submit"] {
+  color: black;
+  padding: 5px;
+}

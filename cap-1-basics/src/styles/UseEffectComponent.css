@@ -1,0 +1,9 @@
+.count.high {
+  background-color: green;
+  width: fit-content;
+}
+
+.count.low {
+  background-color: red;
+  width: fit-content;
+}
