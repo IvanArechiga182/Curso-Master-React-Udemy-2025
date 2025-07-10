@@ -18,6 +18,9 @@ function Home() {
         <li>
           <Link to="/ajaxTest">Peticiones Ajax</Link>
         </li>
+        <li>
+          <Link to="/formularios">Formularios</Link>
+        </li>
       </ol>
     </div>
   );
