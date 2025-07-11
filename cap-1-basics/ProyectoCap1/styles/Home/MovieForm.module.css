@@ -1,0 +1,30 @@
+.movieFormContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50dvh;
+  margin: 0 auto;
+  gap: 1em;
+  padding: 10px;
+}
+
+.movieForm {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 1em;
+}
+
+.movieForm input,
+textarea {
+  padding: 0.5em;
+  border-radius: 10px;
+  outline: none;
+}
+
+.movieForm textarea {
+  min-width: auto;
+  max-width: 100%;
+  max-height: 100px;
+}
