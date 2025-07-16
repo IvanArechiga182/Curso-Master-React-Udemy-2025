@@ -6,5 +6,6 @@
 
 .footerContainer footer {
   font-size: 14px;
+  width: 100%;
   color: #6c757d;
 }

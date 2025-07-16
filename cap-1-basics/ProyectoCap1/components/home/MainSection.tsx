@@ -21,7 +21,7 @@ function MainSection() {
           </div>
         </article>
 
-        <article className={styles.movieItem}>
+        {/* <article className={styles.movieItem}>
           <h3 className="title">Pelicula test 1</h3>
           <p className="movie-description">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem,
@@ -104,6 +104,30 @@ function MainSection() {
             <Button value="Borrar" />
           </div>
         </article>
+
+        <article className={styles.movieItem}>
+          <h3 className="title">Pelicula test 1</h3>
+          <p className="movie-description">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem,
+            eligendi?
+          </p>
+          <div className={styles.movieActions}>
+            <Button value="Editar" />
+            <Button value="Borrar" />
+          </div>
+        </article>
+
+        <article className={styles.movieItem}>
+          <h3 className="title">Pelicula test 1</h3>
+          <p className="movie-description">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem,
+            eligendi?
+          </p>
+          <div className={styles.movieActions}>
+            <Button value="Editar" />
+            <Button value="Borrar" />
+          </div>
+        </article> */}
       </section>
       {/* Barra lateral con buscador */}
       <aside className={styles.sideSearchBar}>

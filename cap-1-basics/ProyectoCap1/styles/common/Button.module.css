@@ -8,6 +8,10 @@
   font-weight: bold;
 }
 
-.button:hover {
-  background-color: #2779bd;
+.button.editButton:hover {
+  background-color: #e77b00;
+}
+
+.button.deleteButton:hover {
+  background-color: #9b0202;
 }
