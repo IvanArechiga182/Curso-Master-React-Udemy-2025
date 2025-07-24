@@ -2,11 +2,12 @@ import styles from "../../styles/common/Button.module.css";
 
 type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   value: string;
+  variant?: "edit" | "delete";
 };
 
-function Button({ value, ...rest }: Props) {
+function Button({ value, variant, ...rest }: Props) {
   return (
-    <button className={styles.button} {...rest}>
+    <button className={`${styles.button} ${styles[variant]}`} {...rest}>
       {value}
     </button>
   );

@@ -6,6 +6,11 @@
   padding: 10px;
 }
 
+.addedMessage {
+  color: green;
+  padding: 5px;
+}
+
 .movieForm {
   display: flex;
   flex-direction: column;
@@ -19,6 +24,8 @@
 .movieForm input,
 textarea {
   padding: 0.5em;
+  background-color: white;
+  color: black;
   border-radius: 10px;
   outline: none;
 }

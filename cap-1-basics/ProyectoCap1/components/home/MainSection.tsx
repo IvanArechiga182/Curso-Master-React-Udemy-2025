@@ -1,138 +1,22 @@
-import Button from "../common/Button";
+import { useState } from "react";
 import styles from "../../styles/home/MainSection.module.css";
 import SearchBar from "../common/SearchBar";
 import MovieForm from "../home/MovieForm";
+import Movies from "./Movies";
 
 function MainSection() {
+  const [movieList, setMovieList] = useState<MovieForm[]>([]);
+
   return (
     <div className={styles.mainSection}>
       {/* Seccion principal de la pagina */}
       <section className={styles.content}>
-        {/*Listado de las peliculas */}
-        <article className={styles.movieItem}>
-          <h3 className="title">Pelicula test 1</h3>
-          <p className="movie-description">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem,
-            eligendi?
-          </p>
-          <div className={styles.movieActions}>
-            <Button value="Editar" />
-            <Button value="Borrar" />
-          </div>
-        </article>
-
-        {/* <article className={styles.movieItem}>
-          <h3 className="title">Pelicula test 1</h3>
-          <p className="movie-description">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem,
-            eligendi?
-          </p>
-          <div className={styles.movieActions}>
-            <Button value="Editar" />
-            <Button value="Borrar" />
-          </div>
-        </article>
-
-        <article className={styles.movieItem}>
-          <h3 className="title">Pelicula test 1</h3>
-          <p className="movie-description">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem,
-            eligendi?
-          </p>
-          <div className={styles.movieActions}>
-            <Button value="Editar" />
-            <Button value="Borrar" />
-          </div>
-        </article>
-
-        <article className={styles.movieItem}>
-          <h3 className="title">Pelicula test 1</h3>
-          <p className="movie-description">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem,
-            eligendi?
-          </p>
-          <div className={styles.movieActions}>
-            <Button value="Editar" />
-            <Button value="Borrar" />
-          </div>
-        </article>
-
-        <article className={styles.movieItem}>
-          <h3 className="title">Pelicula test 1</h3>
-          <p className="movie-description">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem,
-            eligendi?
-          </p>
-          <div className={styles.movieActions}>
-            <Button value="Editar" />
-            <Button value="Borrar" />
-          </div>
-        </article>
-
-        <article className={styles.movieItem}>
-          <h3 className="title">Pelicula test 1</h3>
-          <p className="movie-description">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem,
-            eligendi?
-          </p>
-          <div className={styles.movieActions}>
-            <Button value="Editar" />
-            <Button value="Borrar" />
-          </div>
-        </article>
-
-        <article className={styles.movieItem}>
-          <h3 className="title">Pelicula test 1</h3>
-          <p className="movie-description">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem,
-            eligendi?
-          </p>
-          <div className={styles.movieActions}>
-            <Button value="Editar" />
-            <Button value="Borrar" />
-          </div>
-        </article>
-
-        <article className={styles.movieItem}>
-          <h3 className="title">Pelicula test 1</h3>
-          <p className="movie-description">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem,
-            eligendi?
-          </p>
-          <div className={styles.movieActions}>
-            <Button value="Editar" />
-            <Button value="Borrar" />
-          </div>
-        </article>
-
-        <article className={styles.movieItem}>
-          <h3 className="title">Pelicula test 1</h3>
-          <p className="movie-description">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem,
-            eligendi?
-          </p>
-          <div className={styles.movieActions}>
-            <Button value="Editar" />
-            <Button value="Borrar" />
-          </div>
-        </article>
-
-        <article className={styles.movieItem}>
-          <h3 className="title">Pelicula test 1</h3>
-          <p className="movie-description">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem,
-            eligendi?
-          </p>
-          <div className={styles.movieActions}>
-            <Button value="Editar" />
-            <Button value="Borrar" />
-          </div>
-        </article> */}
+        <Movies moviesList={movieList} setMoviesList={setMovieList} />
       </section>
       {/* Barra lateral con buscador */}
       <aside className={styles.sideSearchBar}>
-        <SearchBar />
-        <MovieForm />
+        <SearchBar movieList={movieList} setMovieList={setMovieList} />
+        <MovieForm setMoviesList={setMovieList} />
       </aside>
     </div>
   );
