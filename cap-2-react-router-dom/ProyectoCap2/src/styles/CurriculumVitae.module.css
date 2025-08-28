@@ -1,0 +1,12 @@
+.coursesListContainer {
+  display: flex;
+  gap: 5em;
+}
+
+.headerTitle {
+  text-align: center;
+}
+
+.listContainer {
+  display: flex;
+}

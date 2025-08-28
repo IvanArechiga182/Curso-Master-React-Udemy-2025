@@ -1,0 +1,55 @@
+.projectsDisplay {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.workItem {
+  width: 200px;
+  flex-grow: 1;
+  flex-basis: 20%;
+  margin: 30px;
+}
+
+.workItem h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.workItem .mask {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.projectsDisplay article {
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.workItem a {
+  text-decoration: none;
+  color: #000;
+  transition: all 300ms;
+}
+
+.workItem a:hover {
+  color: #fa4529;
+}
+
+.workItem img {
+  width: 100%;
+  height: 100%;
+  transition: all 300ms;
+}
+
+.workItem .mask img:hover {
+  width: 115%;
+  height: 120%;
+}
+
+.workItem h3 {
+  color: #989595;
+}
