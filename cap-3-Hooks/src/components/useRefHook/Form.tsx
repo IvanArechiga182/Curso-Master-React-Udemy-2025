@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
-import type { BasicUserData } from "../types/basicForm";
-import "../Form.css";
+import type { BasicUserData } from "../../types/basicForm";
+import "../../Form.css";
 const Form = () => {
   const nombre = useRef<HTMLInputElement>(null);
   const apellidos = useRef<HTMLInputElement>(null);
