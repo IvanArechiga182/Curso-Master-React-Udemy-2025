@@ -1,0 +1,46 @@
+body {
+  background-color: #eee;
+}
+
+.header nav {
+  background-color: black;
+  display: flex;
+  height: 80px;
+  align-items: center;
+}
+
+.header nav a {
+  color: white;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  flex-basis: 75%;
+  margin-top: 8px;
+}
+
+.header nav a:hover {
+  color: lightblue;
+}
+
+.logo {
+  color: white;
+  padding-right: 25px;
+  padding-left: 25px;
+}
+
+.content {
+  width: 70%;
+  min-height: 350px;
+  background-color: white;
+  margin: 0 auto;
+  border-radius: 15px;
+  border: 1px solid gray;
+  margin-top: 20px;
+  padding: 15px;
+}

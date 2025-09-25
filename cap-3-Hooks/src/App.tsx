@@ -16,6 +16,10 @@ function App() {
       <Tasks />
       <hr />
       <Link to="/useEffectHook">UseEffectHook Example</Link>
+      <hr />
+      <Link to="/useReducerHook">useReducer Hook Example</Link>
+      <hr />
+      <Link to="/useContextHook">useContext Hook Example</Link>
     </>
   );
 }
