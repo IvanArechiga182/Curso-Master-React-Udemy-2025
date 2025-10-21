@@ -20,6 +20,10 @@ function App() {
       <Link to="/useReducerHook">useReducer Hook Example</Link>
       <hr />
       <Link to="/useContextHook">useContext Hook Example</Link>
+      <hr />
+      <Link to="/useIdHook">UseId Hook Example</Link>
+      <hr />
+      <Link to="/customHooks">CustomHooks Example</Link>
     </>
   );
 }

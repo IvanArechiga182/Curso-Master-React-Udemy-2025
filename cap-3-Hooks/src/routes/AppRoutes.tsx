@@ -3,6 +3,8 @@ import ExampleUseLayoutEffect from "../components/useLayoutEffect/ExampleUseLayo
 import App from "../App";
 import MyGames from "../components/useReducer/MyGames";
 import ExampleUseContext from "../components/useContext/ExampleUseContext";
+import UseIdHookExample from "../components/useId/UseIdHookExample";
+import CustomHooksExample from "../components/customHooks/CustomHooksExample";
 const AppRoutes = () => {
   return (
     <Routes>
@@ -10,6 +12,8 @@ const AppRoutes = () => {
       <Route path="/useEffectHook" element={<ExampleUseLayoutEffect />}></Route>
       <Route path="/useReducerHook" element={<MyGames />}></Route>
       <Route path="/useContextHook" element={<ExampleUseContext />}></Route>
+      <Route path="/useIdHook" element={<UseIdHookExample />}></Route>
+      <Route path="/customHooks" element={<CustomHooksExample />}></Route>
       <Route path="*" element={<h1>404 Not Found</h1>}></Route>
     </Routes>
   );
