@@ -24,6 +24,8 @@ function App() {
       <Link to="/useIdHook">UseId Hook Example</Link>
       <hr />
       <Link to="/customHooks">CustomHooks Example</Link>
+      <hr />
+      <Link to="/myUserAjax">Fetching Ajax Requests</Link>
     </>
   );
 }

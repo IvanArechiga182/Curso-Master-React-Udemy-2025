@@ -5,6 +5,7 @@ import MyGames from "../components/useReducer/MyGames";
 import ExampleUseContext from "../components/useContext/ExampleUseContext";
 import UseIdHookExample from "../components/useId/UseIdHookExample";
 import CustomHooksExample from "../components/customHooks/CustomHooksExample";
+import MyUser from "../components/MyUser";
 const AppRoutes = () => {
   return (
     <Routes>
@@ -15,6 +16,7 @@ const AppRoutes = () => {
       <Route path="/useIdHook" element={<UseIdHookExample />}></Route>
       <Route path="/customHooks" element={<CustomHooksExample />}></Route>
       <Route path="*" element={<h1>404 Not Found</h1>}></Route>
+      <Route path="/myUserAjax" element={<MyUser />}></Route>
     </Routes>
   );
 };
